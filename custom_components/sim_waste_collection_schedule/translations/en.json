@@ -6,7 +6,7 @@
     "schedule_change_title": "SIM collection days changed",
     "schedule_change_message": "SIM reports changed collection days for {address}, {municipality}. These now apply:\n\n{changes}",
     "schedule_change_item": "{date}: {waste}",
-    "schedule_change_comment": " — {comment}",
+    "schedule_change_comment": "— {comment}",
     "api_failure_title": "SIM schedule update failed",
     "api_failure_message": "Home Assistant could not refresh the collection schedule for {address}, {municipality} after {failures} consecutive attempts. The previously downloaded schedule remains in use when available, but may be out of date.",
     "calendar_range_failure_title": "Could not fetch future collection days",

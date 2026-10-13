@@ -327,9 +327,8 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
             waste=item.translated_label(self.calendar_waste_names),
         )
         if item.comment:
-            line += self._translated("schedule_change_comment", " — {comment}").format(
-                comment=item.comment
-            )
+            comment = self._translated("schedule_change_comment", "— {comment}")
+            line += f" {comment.format(comment=item.comment)}"
         return f"• {line}"
 
     def _translated(self, key: str, fallback: str) -> str:

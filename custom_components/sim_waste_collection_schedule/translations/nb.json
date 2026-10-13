@@ -6,7 +6,7 @@
     "schedule_change_title": "Tømmedager endret",
     "schedule_change_message": "SIM melder om endrede tømmedager for {address}, {municipality}. Disse gjelder nå:\n\n{changes}",
     "schedule_change_item": "{date}: {waste}",
-    "schedule_change_comment": " – {comment}",
+    "schedule_change_comment": "– {comment}",
     "api_failure_title": "Kunne ikke oppdatere SIM-kalenderen",
     "api_failure_message": "Home Assistant har ikke klart å oppdatere tømmedagene for {address}, {municipality} etter {failures} forsøk på rad. Den sist nedlastede kalenderen brukes fortsatt hvis den finnes, og kan være utdatert.",
     "calendar_range_failure_title": "Kunne ikke hente tømmedager så langt fram i tid",
