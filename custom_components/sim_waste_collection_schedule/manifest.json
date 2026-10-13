@@ -1,0 +1,14 @@
+{
+  "domain": "sim_waste_collection_schedule",
+  "name": "SIM Waste Collection Schedule",
+  "codeowners": [
+    "@FREE272"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/FREE272/HomeAssistant-SIM",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.1.0",
+  "issue_tracker": "https://github.com/FREE272/HomeAssistant-SIM/issues"
+}

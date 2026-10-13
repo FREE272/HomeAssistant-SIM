@@ -1,0 +1,115 @@
+{
+  "title": "SIM waste collection",
+  "common": {
+    "calendar_event_instructions": "Remember to put the bin out by 6:00 a.m. on collection day. Remember to bring the bin back home after collection.",
+    "calendar_event_changed_date": "Collection day changed. Use the date shown in the calendar.",
+    "schedule_change_title": "SIM collection days changed",
+    "schedule_change_message": "SIM reports changed collection days for {address}, {municipality}. These now apply:\n\n{changes}",
+    "schedule_change_item": "{date}: {waste}",
+    "schedule_change_comment": " — {comment}",
+    "api_failure_title": "SIM schedule update failed",
+    "api_failure_message": "Home Assistant could not refresh the collection schedule for {address}, {municipality} after {failures} consecutive attempts. The previously downloaded schedule remains in use when available, but may be out of date.",
+    "calendar_range_failure_title": "Could not fetch future collection days",
+    "calendar_range_failure_message": "Home Assistant could not fetch collection days for {address}, {municipality} beyond {last_date}. The calendar still shows dates already retrieved. Try again later."
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Search for your address",
+        "description": "Enter the street name and house number. Select a municipality to narrow the search.",
+        "data": {
+          "address": "Street name and house number",
+          "municipality": "Municipality (optional)"
+        }
+      },
+      "select": {
+        "title": "Select the correct address",
+        "description": "Choose an address from SIM's suggestions. Check that the municipality matches.",
+        "data": {
+          "address": "Address"
+        }
+      },
+      "settings": {
+        "title": "Integration settings",
+        "description": "Choose whether to show collections in the calendar and how waste names are displayed.",
+        "data": {
+          "enable_calendar": "Show collections in the Home Assistant calendar",
+          "full_calendar_names": "Use full waste names in calendar events",
+          "full_sensor_names": "Use full waste names in sensor names",
+          "full_sensor_values": "Use full waste names in sensor values"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Enter a valid address with at least 3 characters.",
+      "no_addresses": "No addresses found. Try the street name without the house number.",
+      "cannot_connect": "Could not contact SIM. Try again later.",
+      "invalid_response": "SIM returned an unexpected response. Try again later."
+    },
+    "abort": {
+      "already_configured": "This address has already been added."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "collections": {
+        "name": "SIM Waste collection calendar for {address}, {municipality}"
+      }
+    },
+    "sensor": {
+      "next_collection": {
+        "name": "Next collection"
+      },
+      "days_until": {
+        "name": "Days until collection"
+      },
+      "waste_types": {
+        "name": "Next waste type"
+      },
+      "residual_waste_full": {
+        "name": "Residual waste"
+      },
+      "residual_waste_short": {
+        "name": "Residual"
+      },
+      "organic_waste_full": {
+        "name": "Food waste"
+      },
+      "organic_waste_short": {
+        "name": "Bio"
+      },
+      "paper_full": {
+        "name": "Paper"
+      },
+      "paper_short": {
+        "name": "Paper"
+      },
+      "plastic_packaging_full": {
+        "name": "Plastic packaging"
+      },
+      "plastic_packaging_short": {
+        "name": "Plastic"
+      },
+      "glass_and_metal_full": {
+        "name": "Glass and metal packaging"
+      },
+      "glass_and_metal_short": {
+        "name": "Glass & metal"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Integration settings",
+        "description": "Choose whether to show collections in the calendar and how waste names are displayed.",
+        "data": {
+          "enable_calendar": "Show collections in the Home Assistant calendar",
+          "full_calendar_names": "Use full waste names in calendar events",
+          "full_sensor_names": "Use full waste names in sensor names",
+          "full_sensor_values": "Use full waste names in sensor values"
+        }
+      }
+    }
+  }
+}

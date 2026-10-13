@@ -1,0 +1,45 @@
+name: SIM online API smoke test
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions: {}
+
+jobs:
+  live-api:
+    name: Check SIM online API
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.14"
+          cache: "pip"
+          cache-dependency-path: requirements_test.txt
+
+      - name: Install test requirements
+        run: python3 -m pip install --requirement requirements_test.txt
+
+      - name: Check live-test secrets
+        env:
+          SIM_LIVE_ADDRESS: ${{ secrets.SIM_LIVE_ADDRESS }}
+          SIM_LIVE_MUNICIPALITY: ${{ secrets.SIM_LIVE_MUNICIPALITY }}
+        run: |
+          if [ -z "$SIM_LIVE_ADDRESS" ] || [ -z "$SIM_LIVE_MUNICIPALITY" ]; then
+            echo "::error::Configure SIM_LIVE_ADDRESS and SIM_LIVE_MUNICIPALITY as repository secrets."
+            exit 1
+          fi
+
+      - name: Run live API smoke test
+        env:
+          SIM_LIVE_ADDRESS: ${{ secrets.SIM_LIVE_ADDRESS }}
+          SIM_LIVE_MUNICIPALITY: ${{ secrets.SIM_LIVE_MUNICIPALITY }}
+        run: python3 -m pytest --quiet tests/test_api_online.py

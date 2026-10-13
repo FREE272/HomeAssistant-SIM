@@ -1,0 +1,115 @@
+{
+  "title": "SIM tømmekalender",
+  "common": {
+    "calendar_event_instructions": "Husk at dunken må settes ut innen kl. 06.00 på tømmedagen. Husk å ta dunken med hjem etter tømming.",
+    "calendar_event_changed_date": "Tømmedatoen er endret. Bruk datoen som vises i kalenderen.",
+    "schedule_change_title": "Tømmedager endret",
+    "schedule_change_message": "SIM melder om endrede tømmedager for {address}, {municipality}. Disse gjelder nå:\n\n{changes}",
+    "schedule_change_item": "{date}: {waste}",
+    "schedule_change_comment": " – {comment}",
+    "api_failure_title": "Kunne ikke oppdatere SIM-kalenderen",
+    "api_failure_message": "Home Assistant har ikke klart å oppdatere tømmedagene for {address}, {municipality} etter {failures} forsøk på rad. Den sist nedlastede kalenderen brukes fortsatt hvis den finnes, og kan være utdatert.",
+    "calendar_range_failure_title": "Kunne ikke hente tømmedager så langt fram i tid",
+    "calendar_range_failure_message": "Home Assistant kunne ikke hente tømmedager for {address}, {municipality} etter {last_date}. Kalenderen viser fortsatt datoene som allerede er hentet. Prøv igjen senere."
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Søk etter adressen din",
+        "description": "Skriv gatenavn og husnummer. Velg kommune for å avgrense søket.",
+        "data": {
+          "address": "Gatenavn og husnummer",
+          "municipality": "Kommune (valgfritt)"
+        }
+      },
+      "select": {
+        "title": "Velg riktig adresse",
+        "description": "Velg en adresse fra SIMs adresseforslag. Kontroller at kommunen stemmer.",
+        "data": {
+          "address": "Adresse"
+        }
+      },
+      "settings": {
+        "title": "Innstillinger for integrasjonen",
+        "description": "Velg om tømminger skal vises i kalenderen, og hvordan avfallsnavnene skal vises.",
+        "data": {
+          "enable_calendar": "Vis tømminger i Home Assistant-kalenderen",
+          "full_calendar_names": "Bruk fulle betegnelser i kalenderhendelser",
+          "full_sensor_names": "Bruk fulle betegnelser i sensornavnene",
+          "full_sensor_values": "Bruk fulle betegnelser i sensorverdiene"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Skriv inn en gyldig adresse med minst 3 tegn.",
+      "no_addresses": "Fant ingen adresser. Prøv gatenavnet uten husnummer.",
+      "cannot_connect": "Fikk ikke kontakt med SIM. Prøv igjen senere.",
+      "invalid_response": "SIM returnerte et uventet svar. Prøv igjen senere."
+    },
+    "abort": {
+      "already_configured": "Denne adressen er allerede lagt til."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "collections": {
+        "name": "SIM Tømmekalender for {address}, {municipality}"
+      }
+    },
+    "sensor": {
+      "next_collection": {
+        "name": "Neste tømming"
+      },
+      "days_until": {
+        "name": "Dager til tømming"
+      },
+      "waste_types": {
+        "name": "Neste avfallstype"
+      },
+      "residual_waste_full": {
+        "name": "Restavfall"
+      },
+      "residual_waste_short": {
+        "name": "Rest"
+      },
+      "organic_waste_full": {
+        "name": "Bioavfall"
+      },
+      "organic_waste_short": {
+        "name": "Bio"
+      },
+      "paper_full": {
+        "name": "Papir"
+      },
+      "paper_short": {
+        "name": "Papir"
+      },
+      "plastic_packaging_full": {
+        "name": "Plastemballasje"
+      },
+      "plastic_packaging_short": {
+        "name": "Plast"
+      },
+      "glass_and_metal_full": {
+        "name": "Glass- og metallemballasje"
+      },
+      "glass_and_metal_short": {
+        "name": "Glass & metall"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Innstillinger for integrasjonen",
+        "description": "Velg om tømminger skal vises i kalenderen, og hvordan avfallsnavnene skal vises.",
+        "data": {
+          "enable_calendar": "Vis tømminger i Home Assistant-kalenderen",
+          "full_calendar_names": "Bruk fulle betegnelser i kalenderhendelser",
+          "full_sensor_names": "Bruk fulle betegnelser i sensornavnene",
+          "full_sensor_values": "Bruk fulle betegnelser i sensorverdiene"
+        }
+      }
+    }
+  }
+}
