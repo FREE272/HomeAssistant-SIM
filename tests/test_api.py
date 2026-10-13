@@ -57,9 +57,9 @@ async def test_address_ids_are_route_ids_and_filtering():
     routes = await api.search_routes("Testveg", "stord")
     assert len(routes) == 2
     assert routes[0].unique_id != routes[1].unique_id
-    assert routes[0].unique_id == Route(
-        99, " TESTVEG  12 ", "stord", "Ny rute"
-    ).unique_id
+    assert (
+        routes[0].unique_id == Route(99, " TESTVEG  12 ", "stord", "Ny rute").unique_id
+    )
     assert session.get.call_args.kwargs["params"] == {"address": "Testveg"}
 
 
@@ -94,13 +94,13 @@ async def test_collections_sorted_deduplicated_and_filtered():
                         **base,
                         "collection_date": "2026-12-31",
                         "exception": "1",
-                        "exception_comment": "Flyttet hentedag",
+                        "exception_comment": "Flytta tømmedagen fordi me hadde lyst.",
                     },
                     {
                         **base,
                         "collection_date": "2026-12-31",
                         "exception": "1",
-                        "exception_comment": "Flyttet hentedag",
+                        "exception_comment": "Flytta tømmedagen fordi me hadde lyst.",
                     },
                     {**base, "collection_date": "2026-12-30"},
                     {**base, "collection_date": "2027-01-01", "waste_types": "nothing"},
@@ -110,7 +110,10 @@ async def test_collections_sorted_deduplicated_and_filtered():
     )
     result = await api.collections(49, date(2026, 12, 31), date(2027, 1, 4))
     assert [item.day.isoformat() for item in result] == ["2026-12-31", "2027-01-03"]
-    assert result[0].exception and result[0].comment == "Flyttet hentedag"
+    assert (
+        result[0].exception
+        and result[0].comment == "Flytta tømmedagen fordi me hadde lyst."
+    )
     assert session.get.call_args.kwargs["params"]["from"] == "2026-12-31"
 
 

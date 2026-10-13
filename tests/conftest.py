@@ -13,7 +13,12 @@ ROUTE = Route(49, "Testveg 12", "STORD", "Tysdag B")
 TODAY = date(2026, 10, 10)
 COLLECTIONS = (
     Collection(date(2026, 10, 10), "Rest/bio"),
-    Collection(date(2026, 10, 13), "Rest/bio", True, "Flyttet hentedag"),
+    Collection(
+        date(2026, 10, 13),
+        "Rest/bio",
+        True,
+        "Flytta tømmedagen fordi me hadde lyst.",
+    ),
     Collection(date(2026, 11, 3), "Papir/plast"),
     Collection(date(2026, 11, 17), "Glas/metall B"),
 )

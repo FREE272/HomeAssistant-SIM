@@ -109,10 +109,10 @@ async def test_calendar_day_boundaries_and_cached_ranges(hass, setup_entry, sim_
     assert not isinstance(events[0].start, datetime)
     assert events[0].end == date(2026, 10, 11)
     assert sim_api[1].call_count == initial_calls
-    assert "06.00" in events[0].description
+    assert "6:00 a.m." in events[0].description
     events = await calendar.async_get_events(hass, end, end + timedelta(days=1))
     assert "Collection day changed" in events[0].description
-    assert "Moved collection day" in events[0].description
+    assert "Flytta tømmedagen fordi me hadde lyst." in events[0].description
 
 
 async def test_empty_schedule_is_unknown_not_zero_days(hass, setup_entry, sim_api):
