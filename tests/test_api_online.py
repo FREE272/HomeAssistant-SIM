@@ -1,13 +1,12 @@
 """Live smoke test for SIM's address and collection API."""
 
-from datetime import date, timedelta
 import os
+from datetime import date, timedelta
 
 import aiohttp
 import pytest
 
 from custom_components.sim_waste_collection_schedule.api import SimApi
-
 
 LIVE_ADDRESS = os.environ.get("SIM_LIVE_ADDRESS")
 LIVE_MUNICIPALITY = os.environ.get("SIM_LIVE_MUNICIPALITY")

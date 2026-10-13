@@ -4,15 +4,12 @@ target-version = "py314"
 
 [lint]
 select = [
-    "ALL",
-]
-
-ignore = [
-    "ANN401", # Dynamically typed expressions (typing.Any) are disallowed
-    "D203", # no-blank-line-before-class (incompatible with formatter)
-    "D212", # multi-line-summary-first-line (incompatible with formatter)
-    "COM812", # incompatible with formatter
-    "ISC001", # incompatible with formatter
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "SIM",
 ]
 
 [lint.flake8-pytest-style]

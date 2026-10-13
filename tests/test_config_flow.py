@@ -6,6 +6,7 @@ from pytest_homeassistant_custom_component.common import MockConfigEntry
 
 from custom_components.sim_waste_collection_schedule.api import SimConnectionError
 from custom_components.sim_waste_collection_schedule.const import DOMAIN
+
 from .conftest import ROUTE
 
 

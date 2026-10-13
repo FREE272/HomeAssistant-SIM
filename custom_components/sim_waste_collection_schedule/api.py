@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import asyncio
+import hashlib
+import unicodedata
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import date
-import hashlib
 from typing import Any
-import unicodedata
 
 import aiohttp
 
@@ -176,7 +175,7 @@ class SimApi:
                     payload = await response.json()
                 except (ValueError, aiohttp.ContentTypeError) as err:
                     raise SimResponseError("SIM did not return valid JSON") from err
-        except (aiohttp.ClientError, asyncio.TimeoutError) as err:
+        except (TimeoutError, aiohttp.ClientError) as err:
             raise SimConnectionError("Unable to contact SIM") from err
         if not isinstance(payload, dict) or not isinstance(payload.get("data"), dict):
             raise SimResponseError("Missing data object in SIM response")

@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import asyncio
-from dataclasses import dataclass
-from datetime import date, datetime, timedelta
 import hashlib
 import logging
+from dataclasses import dataclass
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from homeassistant.components import persistent_notification
@@ -115,9 +115,7 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
         )
         self.full_calendar_names = entry.options.get(
             CONF_FULL_CALENDAR_NAMES,
-            entry.data.get(
-                CONF_FULL_CALENDAR_NAMES, DEFAULT_FULL_CALENDAR_NAMES
-            ),
+            entry.data.get(CONF_FULL_CALENDAR_NAMES, DEFAULT_FULL_CALENDAR_NAMES),
         )
         self.full_sensor_values = entry.options.get(
             CONF_FULL_SENSOR_VALUES,
@@ -159,7 +157,8 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
                 route = matches[0]
             if route is None:
                 raise UpdateFailed(
-                    "The selected SIM address could not be resolved unambiguously; add it again"
+                    "The selected SIM address could not be resolved "
+                    "unambiguously; add it again"
                 )
             today = sim_today()
             start, end = (
@@ -254,18 +253,19 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
         # Persist the signature to avoid repeating unchanged alerts on each
         # poll; the stable notification ID updates the alert if details change.
         signature = self._schedule_signature(schedule, changed) if changed else None
-        if signature != self._schedule_notification_signature:
-            if not changed and self._schedule_notification_signature is not None:
-                try:
-                    persistent_notification.async_dismiss(
-                        self.hass, self._schedule_notification_id
-                    )
-                except Exception:
-                    _LOGGER.exception(
-                        "Could not dismiss SIM changed-date notification"
-                    )
-                self._schedule_notification_signature = None
-                state_changed = True
+        if (
+            signature != self._schedule_notification_signature
+            and not changed
+            and self._schedule_notification_signature is not None
+        ):
+            try:
+                persistent_notification.async_dismiss(
+                    self.hass, self._schedule_notification_id
+                )
+            except Exception:
+                _LOGGER.exception("Could not dismiss SIM changed-date notification")
+            self._schedule_notification_signature = None
+            state_changed = True
 
         if changed and (
             signature != self._schedule_notification_signature
@@ -279,9 +279,7 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
                 ).format(
                     address=schedule.route.address,
                     municipality=schedule.route.municipality,
-                    changes="\n".join(
-                        self._format_change(item) for item in changed
-                    ),
+                    changes="\n".join(self._format_change(item) for item in changed),
                 )
                 persistent_notification.async_create(
                     self.hass,
@@ -324,16 +322,14 @@ class SimCoordinator(DataUpdateCoordinator[Schedule]):
         return hashlib.sha256(value.encode()).hexdigest()
 
     def _format_change(self, item: Collection) -> str:
-        line = self._translated(
-            "schedule_change_item", "{date}: {waste}"
-        ).format(
+        line = self._translated("schedule_change_item", "{date}: {waste}").format(
             date=item.day.isoformat(),
             waste=item.translated_label(self.calendar_waste_names),
         )
         if item.comment:
-            line += self._translated(
-                "schedule_change_comment", " — {comment}"
-            ).format(comment=item.comment)
+            line += self._translated("schedule_change_comment", " — {comment}").format(
+                comment=item.comment
+            )
         return f"• {line}"
 
     def _translated(self, key: str, fallback: str) -> str:

@@ -3,18 +3,22 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta
+from typing import TYPE_CHECKING
 
 from homeassistant.components.calendar import CalendarEntity, CalendarEvent
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.util import dt as dt_util
 
 from . import SimConfigEntry
 from .api import Collection, SimApiError
-from .entity import SimEntity
 from .const import CONF_ENABLE_CALENDAR, DOMAIN
+from .entity import SimEntity
+
+if TYPE_CHECKING:
+    from .coordinator import SimCoordinator
 
 PARALLEL_UPDATES = 0
 
