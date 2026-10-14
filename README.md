@@ -1,21 +1,26 @@
 <h1><img src="custom_components/sim_waste_collection_schedule/brand/icon.png" width="40" height="40" align="top" alt=""> SIM Waste Collection Schedule for Home Assistant</h1>
 
-[![Live API][live-api-badge]][live-api-url]
+[![API Test][sim-api-badge]][sim-api-url]
 [![Tests][tests-badge]][tests-url]
 [![Validate][validate-badge]][validate-url]
+
 [![HACS Custom][hacs-badge]][hacs-url]
 [![License][license-badge]][license-url]
+[![Active installations][installs-badge]][installs-url]
 
-[live-api-badge]: https://img.shields.io/github/actions/workflow/status/FREE272/HomeAssistant-SIM/api-online.yml?branch=main&style=for-the-badge&label=Live%20API
-[live-api-url]: https://github.com/FREE272/HomeAssistant-SIM/actions/workflows/api-online.yml
+[sim-api-badge]: https://img.shields.io/github/actions/workflow/status/FREE272/HomeAssistant-SIM/api-online.yml?branch=main&style=for-the-badge&label=API%20Test&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA3CAYAAACxUDzgAAAABHNCSVQICAgIfAhkiAAABLlJREFUaIHlW7+LJUUQrqrZxeferpy/OeUildM7TMW/QFw4DcyM1MTASMHMAxPNFMzEf0DQxOjgjBZMxEQwUEQ0ceE8hGPd9W643Zuuz8CZx7x+3TPdPf1m3rEfLLvTXV1dU1NV3VXdy0REqgqaACLCrnYABYAqhHZV2Dg6OnpkzAkbqOqrnnYAS9+pctGuErwu1uKR4x8ReXAkkRawMcWkAUqBiMiIIi1hCsXcbj+0lTJ2HOnC6K7Ufvl1VQoR0ajmCuDzIeMPDg7OqipaP8e5ZLMxpsV8IyKvNQ+teW+IyLmugZEyXhWRyykCtjGaYnwBt8uFhso2xD3HCr668NCjlFwfK0T5PowSY0SksJpu+mjLsjyfe35V/TZ2zFR7hYddjcaYd2az2Z+uPhFh348x5uWe+V6KFXCUGBO6RPtkiXEFVTXk/uDXReTJUD6T7S5V9U27zaWA2PggIoVnzBMxfCazmNDAO2RlGcIr2WLqSe6kjnehqqo37LacH84Y82EobZLFAPi4KIorRJ0+PUeoxQTIcp2IfhSRV0LkdPELtZpkV/IF1BjaROU4AeCzoije6+PVN2fTP2lq71HCdym8mPldB/+3YmVonnNZzN9E9GgIrS2M3QfgPgDRsSskmIdaqIhwFosRkccih9xq/qhLmfPUhJmjM+YOpfwQy2vOM3Wgqv7cfgbwfvCkIjvW2LtWf/iy2k37QtfYLm8ZYjEX2w9FUXzaIcBhHzPXnqPrpfv6jTEf2fR9MrSRNbtm5h0A/zq6HkjlKSIM4CkiusvMzjzKRo69T27F3FLVfsJ4vn+E0rqUAuBK9JxDtBu7DwlMGpNPCGKSUFW9SUQP+egHrUqquuQ2GQIna4LZ+cZ0yONUynxcrAAWNu2G/f39+33E3j3DsvBsFb3tTdhP9e/DVv8Cj77g3Ieh2fUdEVlQREx6YI2riMiu9CWhTyEhMg61mFnsgI44kGUhyHU+NUmu1PPFUs6KqlDXUdVfQxgOVoz9kmVZdp4RNQBwdkmY/19u1veSAD6oqupFZt6paZdiXQcuhBBlqeCF1m6XJmfeYGbTRVN/4cdz3HoIlStbEllV1es245Bx9uUgF0Tk2TGVMp936IRERCLypTHmK6stSDlj1JxdbtuH3MXwayKy226I4b+KGw8ABECnu7rkyLYq1UFw19XOzJdCeOT8SAAu1rWeKKU0WEnw7ULAfLdFZDtm/uPj4+c2Nzd/iRnThSwWk3Ag1izF33tIzhhj3nZ1AJipKowxn7TThZxKaTDYYhw12wWfHrI9F5FJLk8OthgACytRWZbnbZ92ZeC2EAC+dvVNdaOUKHM9xseLmZ9h5t/7+E2piDZEhLMcnxClZ9U21kE5Sa7EzBdSUgBfbcUlFBFdi5UrN6IUU+9Jfmu3pXzhRkEAnvfMs1vHni9ieedCsCvlPGe2UZblue3t7RuuvrVelZh5qbKWU+Ctra2/aiua120BXJ4y3oRUzQ6Z2XnrcgWYW7DjP1BGRa8rpdZa7mX0uVK5bvf7x4RTMScnJ0+LyBm7/TRYSwOnK636xva6w+dKS3dKABSnRSkNNphZACiR21L29vY27PsrpwEh5zDZTgjvBTTG8R+zLQQIkpYPEgAAAABJRU5ErkJggg==
+[sim-api-url]: https://github.com/FREE272/HomeAssistant-SIM/actions/workflows/api-online.yml
 [tests-badge]: https://img.shields.io/github/actions/workflow/status/FREE272/HomeAssistant-SIM/tests.yml?branch=main&style=for-the-badge&label=Tests
 [tests-url]: https://github.com/FREE272/HomeAssistant-SIM/actions/workflows/tests.yml
 [validate-badge]: https://img.shields.io/github/actions/workflow/status/FREE272/HomeAssistant-SIM/validate.yml?branch=main&style=for-the-badge&label=Validate
 [validate-url]: https://github.com/FREE272/HomeAssistant-SIM/actions/workflows/validate.yml
+
 [hacs-badge]: https://img.shields.io/badge/HACS-Custom-41BDF5?style=for-the-badge&logo=homeassistantcommunitystore&logoColor=white
 [hacs-url]: https://www.hacs.xyz/docs/faq/custom_repositories/
 [license-badge]: https://img.shields.io/github/license/FREE272/HomeAssistant-SIM?style=for-the-badge
 [license-url]: https://github.com/FREE272/HomeAssistant-SIM/blob/main/LICENSE
+[installs-badge]:https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=Active%20installations&&logoColor=f5f5f5&cacheSeconds=15600&style=for-the-badge&url=https://analytics.home-assistant.io/custom_integrations.json&query=$.sim_waste_collection_schedule.total
+[installs-url]:https://analytics.home-assistant.io
 
 An unofficial Home Assistant integration that retrieves waste collection days directly from [SIM](https://sim.as/). It requires no API key or login and supports addresses in the municipalities of Austevoll, Bømlo, Fitjar, Kvinnherad, Stord, Sveio, and Tysnes.
 
