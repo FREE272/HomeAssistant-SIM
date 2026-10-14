@@ -1,9 +1,10 @@
+<center>
+<div align="center">
 <h1><img src="custom_components/sim_waste_collection_schedule/brand/icon.png" width="40" height="40" align="top" alt=""> SIM Waste Collection Schedule for Home Assistant</h1>
 
 [![API Test][sim-api-badge]][sim-api-url]
 [![Tests][tests-badge]][tests-url]
-[![Validate][validate-badge]][validate-url]
-
+[![Validate][validate-badge]][validate-url]\
 [![HACS Custom][hacs-badge]][hacs-url]
 [![License][license-badge]][license-url]
 [![Active installations][installs-badge]][installs-url]
@@ -21,6 +22,9 @@
 [license-url]: https://github.com/FREE272/HomeAssistant-SIM/blob/main/LICENSE
 [installs-badge]:https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=Active%20installations&&logoColor=f5f5f5&cacheSeconds=15600&style=for-the-badge&url=https://analytics.home-assistant.io/custom_integrations.json&query=$.sim_waste_collection_schedule.total
 [installs-url]:https://analytics.home-assistant.io
+
+</div>
+</center>
 
 An unofficial Home Assistant integration that retrieves waste collection days directly from [SIM](https://sim.as/). It requires no API key or login and supports addresses in the municipalities of Austevoll, Bømlo, Fitjar, Kvinnherad, Stord, Sveio, and Tysnes.
 
