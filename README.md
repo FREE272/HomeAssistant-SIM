@@ -106,8 +106,9 @@ Use the button below to open this repository in HACS:
 
 Then:
 
-1. Select **Download** to install the integration.
-2. **Restart Home Assistant**.
+1. Select **Add** when prompted to add the custom repository **FREE272/HomeAssistant-SIM**.
+2. Select **Download** to install the integration.
+3. **Restart Home Assistant**.
 
 > [!NOTE]
 > The My Home Assistant link opens a landing page first. Select the button there to open the repository in your Home Assistant instance.
