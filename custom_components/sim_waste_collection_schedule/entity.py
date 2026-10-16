@@ -7,7 +7,7 @@ from typing import Any
 from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN, NAME
+from .const import DOMAIN
 from .coordinator import SimCoordinator
 
 
