@@ -53,7 +53,7 @@
   "entity": {
     "calendar": {
       "collections": {
-        "name": "SIM Tømmekalender for {address}, {municipality}"
+        "name": "Tømmekalender"
       }
     },
     "sensor": {

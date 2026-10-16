@@ -1,5 +1,5 @@
 {
-  "title": "SIM tømmekalender",
+  "title": "SIM Tømmekalender",
   "common": {
     "calendar_event_instructions": "Husk at dunken må settes ut innen kl. 06.00 på tømmedagen. Husk å ta dunken med hjem etter tømming.",
     "calendar_event_changed_date": "Tømmedatoen er endret. Bruk datoen som vises i kalenderen.",
@@ -53,7 +53,7 @@
   "entity": {
     "calendar": {
       "collections": {
-        "name": "SIM Tømmekalender for {address}, {municipality}"
+        "name": "Tømmekalender"
       }
     },
     "sensor": {

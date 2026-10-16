@@ -62,7 +62,7 @@ class SimCalendar(SimEntity, CalendarEntity):
         super().__init__(coordinator, key)
         name_template = coordinator.translations.get(
             f"component.{DOMAIN}.entity.calendar.collections.name",
-            "SIM Waste collection calendar for {address}, {municipality}",
+            "Schedule",
         )
         self._attr_name = name_template.format(
             address=coordinator.route.address,

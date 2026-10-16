@@ -22,9 +22,9 @@ class SimEntity(CoordinatorEntity[SimCoordinator]):
         self._attr_unique_id = f"{route.unique_id}_{key}"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, route.unique_id)},
-            name=f"SIM {route.address}, {route.municipality}",
+            name=f"{route.address} SIM",
             manufacturer="SIM",
-            model=NAME,
+            model="Tømmekalender",
             entry_type=DeviceEntryType.SERVICE,
             configuration_url="https://sim.as/",
         )

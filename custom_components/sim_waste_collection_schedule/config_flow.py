@@ -122,8 +122,8 @@ class SimConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             {
                 "value": str(index),
                 "label": (
-                    f"{route.address}, {route.municipality} · {route.name} "
-                    f"(route {route.route_id})"
+                    f"{route.address}, {route.municipality}"
+                    f"{route.name} ({route.route_id})"
                 ),
             }
             for index, route in enumerate(self._routes)

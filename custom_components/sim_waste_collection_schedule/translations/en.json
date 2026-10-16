@@ -1,5 +1,5 @@
 {
-  "title": "SIM waste collection",
+  "title": "SIM Waste collection schedule",
   "common": {
     "calendar_event_instructions": "Remember to put the bin out by 6:00 a.m. on collection day. Remember to bring the bin back home after collection.",
     "calendar_event_changed_date": "Collection day changed. Use the date shown in the calendar.",
@@ -53,7 +53,7 @@
   "entity": {
     "calendar": {
       "collections": {
-        "name": "SIM Waste collection calendar for {address}, {municipality}"
+        "name": "Schedule"
       }
     },
     "sensor": {
