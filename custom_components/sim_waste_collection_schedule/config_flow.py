@@ -122,7 +122,8 @@ class SimConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             {
                 "value": str(index),
                 "label": (
-                    f"{route.address}, {route.municipality}"
+                    # Renders as one line but broken up here to satisfy lint rules
+                    f"{route.address}, {route.municipality.title()} - "
                     f"{route.name} ({route.route_id})"
                 ),
             }
@@ -175,8 +176,11 @@ class SimConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             else:
                 return self.async_create_entry(
                     title=(
+                        # Renders as one line but broken up here to satisfy lint rules
                         f"{self._selected_route.address}, "
-                        f"{self._selected_route.municipality}"
+                        f"{self._selected_route.municipality.title()} - "
+                        f"{self._selected_route.name} "
+                        f"({self._selected_route.route_id})"
                     ),
                     data={
                         **self._selected_route.as_entry_data(),

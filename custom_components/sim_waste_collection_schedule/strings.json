@@ -16,7 +16,7 @@
     "step": {
       "user": {
         "title": "Search for your address",
-        "description": "Enter the street name and house number. Select a municipality to narrow the search.",
+        "description": "Enter street name and house number. Select a municipality to narrow the search.",
         "data": {
           "address": "Street name and house number",
           "municipality": "Municipality (optional)"
@@ -24,16 +24,16 @@
       },
       "select": {
         "title": "Select the correct address",
-        "description": "Choose an address from SIM's suggestions. Check that the municipality matches.",
+        "description": "Check that the municipality and route matches.",
         "data": {
           "address": "Address"
         }
       },
       "settings": {
         "title": "Integration settings",
-        "description": "Choose whether to show collections in the calendar and how waste names are displayed.",
+        "description": "Choose whether to add collection days to the calendar, and how waste names are displayed, e.g. residual waste / residual.",
         "data": {
-          "enable_calendar": "Show collections in the Home Assistant calendar",
+          "enable_calendar": "Add collection days to the Home Assistant calendar",
           "full_calendar_names": "Use full waste names in calendar events",
           "full_sensor_names": "Use full waste names in sensor names",
           "full_sensor_values": "Use full waste names in sensor values"
@@ -102,9 +102,9 @@
     "step": {
       "init": {
         "title": "Integration settings",
-        "description": "Choose whether to show collections in the calendar and how waste names are displayed.",
+        "description": "Choose whether to add collection days to the calendar, and how waste names are displayed, e.g. residual waste / residual.",
         "data": {
-          "enable_calendar": "Show collections in the Home Assistant calendar",
+          "enable_calendar": "Add collection days to the Home Assistant calendar",
           "full_calendar_names": "Use full waste names in calendar events",
           "full_sensor_names": "Use full waste names in sensor names",
           "full_sensor_values": "Use full waste names in sensor values"

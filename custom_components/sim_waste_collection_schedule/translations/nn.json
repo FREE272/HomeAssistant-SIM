@@ -16,7 +16,7 @@
     "step": {
       "user": {
         "title": "Søk etter adressa di",
-        "description": "Skriv gatenamn og husnummer. Vel kommune for å avgrensa søket.",
+        "description": "Fyll inn gatenamn og husnummer. Vel kommune for å avgrensa søket.",
         "data": {
           "address": "Gatenamn og husnummer",
           "municipality": "Kommune (valfritt)"
@@ -24,19 +24,19 @@
       },
       "select": {
         "title": "Vel rett adresse",
-        "description": "Vel adresse frå adresseforslaga til SIM. Sjekk at kommunen samsvarar.",
+        "description": "Sjekk at kommunen og ruta samsvarar.",
         "data": {
           "address": "Adresse"
         }
       },
       "settings": {
         "title": "Innstillingar for integrasjonen",
-        "description": "Vel om tømmingar skal visast i kalenderen, og korleis avfallsnamna skal visast.",
+        "description": "Vel om tømmedagar skal leggjast til kalenderen, og korleis avfallsnamna skal visast, t.d. restavfall / rest.",
         "data": {
-          "enable_calendar": "Vis tømmingar i Home Assistant-kalenderen",
+          "enable_calendar": "Legg til tømmedagar i Home Assistant-kalenderen",
           "full_calendar_names": "Bruk fulle nemningar i kalenderhendingar",
-          "full_sensor_names": "Bruk fulle nemningar i sensornamna",
-          "full_sensor_values": "Bruk fulle nemningar i sensorverdiane"
+          "full_sensor_names": "Bruk fulle nemningar i sensornamn",
+          "full_sensor_values": "Bruk fulle nemningar i sensorverdiar"
         }
       }
     },
@@ -102,12 +102,12 @@
     "step": {
       "init": {
         "title": "Innstillingar for integrasjonen",
-        "description": "Vel om tømmingar skal visast i kalenderen, og korleis avfallsnamna skal visast.",
+        "description": "Vel om tømmedagar skal leggjast til kalenderen, og korleis avfallsnamna skal visast, t.d. restavfall / rest.",
         "data": {
-          "enable_calendar": "Vis tømmingar i Home Assistant-kalenderen",
+          "enable_calendar": "Legg til tømmedagar i Home Assistant-kalenderen",
           "full_calendar_names": "Bruk fulle nemningar i kalenderhendingar",
-          "full_sensor_names": "Bruk fulle nemningar i sensornamna",
-          "full_sensor_values": "Bruk fulle nemningar i sensorverdiane"
+          "full_sensor_names": "Bruk fulle nemningar i sensornamn",
+          "full_sensor_values": "Bruk fulle nemningar i sensorverdiar"
         }
       }
     }
